@@ -13,8 +13,7 @@ def setup_logging(default_level=logging.INFO,
     Setup logging configuration
     """
     path = default_path
-    value = os.getenv(env_key, None)
-    if value:
+    if value := os.getenv(env_key, None):
         path = value
     if os.path.exists(path):
         with open(path, 'rt') as f:
